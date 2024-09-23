@@ -14,5 +14,5 @@ Este es un repo contiene los ejercicios vistos en clases
    6. [Ejercicio Cinco ListViews](./Clases/09-09-2024/ejercicio_cinco) -> 09-09-2024
    7. [Ejercicio Seis ListViews](./Clases/09-09-2024/ejercicio_seis) -> 09-09-2024
    8. [Ejercicio Siete MultiActivity](./Clases/11-09-2024/ejercicio_siete) -> 11-09-2024 
-   9. [Ejercicicio Repaso Evaluacion 2](.Clases/23-09-2024/repaso_eva2) -> 23-09-2024
+   9. [Ejercicicio Repaso Evaluacion 2](./Clases/23-09-2024/repaso_eva2) -> 23-09-2024
 
