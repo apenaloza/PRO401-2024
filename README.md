@@ -16,3 +16,5 @@ Este es un repo contiene los ejercicios vistos en clases
    8. [Ejercicio Siete MultiActivity](./Clases/11-09-2024/ejercicio_siete) -> 11-09-2024 
    9. [Ejercicicio Repaso Evaluacion 2](./Clases/23-09-2024/repaso_eva2) -> 23-09-2024
 
+2. SQLite
+   1. [Ejercicio Uno SQLite Insertar Registros](./Clases/27-09-2024/insertar-y-leer-en-SQLite/) -> 27-09-2024
