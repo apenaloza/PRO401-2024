@@ -45,7 +45,9 @@ class MainActivity : AppCompatActivity() {
 
         agregarUsuario()
         listar()
-       
+       actualizarUsuario()
+        eliminarUsuario()
+        cargarDatos()
     }
     private fun showMessage(title: String, Message: String) {
         val builder = AlertDialog.Builder(this)
@@ -123,9 +125,76 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
- 
+    private fun actualizarUsuario() {
+        btnActualizar.setOnClickListener {
+            val id = editTextId.text.toString()  // Captura el ID del campo EditText
+            if (id.isEmpty()) {
+                Toast.makeText(this, "Por favor ingresa un ID", Toast.LENGTH_LONG).show()
+                return@setOnClickListener //se utiliza para interrumpir la ejecución de la lambda dentro del bloque setOnClickListener
+            }
+            if (!validarEditText()) {
+                return@setOnClickListener  // Si los campos están vacíos, detener la operación
+            }
 
+            val actualizar = db.actualizarUsuario(
+                id,
+                editTextNombre.text.toString(),
+                editTextApellido.text.toString(),
+                editTextEmail.text.toString(),
+                editTextTelefono.text.toString()
+            )
+            if (actualizar) {
+                Toast.makeText(this, "Usuario Actualizado", Toast.LENGTH_LONG).show()
+                limpiarEditText()
+            } else {
+                Toast.makeText(this, "Usuario no actualizado", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+    // Función para cargar los datos de un ID específico a los EditText
+    private fun cargarDatos() {
+        btnCargarDatos.setOnClickListener {
+            val id = editTextId.text.toString()
+            if (id.isEmpty()) {
+                Toast.makeText(this, "Por favor ingresa un ID", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
 
-   
+            val cursor: Cursor = db.obtenerUsuarios()  // Obtener todos los datos
+            if (cursor.moveToFirst()) {
+                do {
+                    // Buscar si el ID coincide
+                    if (cursor.getString(0) == id) {
+                        // Cargar los datos en los EditText
+                        editTextNombre.setText(cursor.getString(1))
+                        editTextApellido.setText(cursor.getString(2))
+                        editTextEmail.setText(cursor.getString(3))
+                        editTextTelefono.setText(cursor.getString(4))
+                        return@setOnClickListener  // Dejar de buscar cuando encuentre
+                    }
+                } while (cursor.moveToNext())
+            }
+            Toast.makeText(this, "ID no encontrado", Toast.LENGTH_LONG).show()
+            limpiarEditText()
+        }
+    }
+
+    private fun eliminarUsuario() {
+        btnEliminar.setOnClickListener {
+            val id = editTextId.text.toString()  // Captura el ID del campo EditText
+            if (id.isEmpty()) {
+                Toast.makeText(this, "Por favor ingresa un ID", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            val idEliminado = db.eliminarUsuario(id)
+            if (idEliminado > 0) {
+                Toast.makeText(this, "Usuario Eliminado", Toast.LENGTH_LONG).show()
+                limpiarEditText()
+            } else {
+                Toast.makeText(this, "Usuario no eliminado", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
 }

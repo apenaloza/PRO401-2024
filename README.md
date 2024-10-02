@@ -19,3 +19,4 @@ Este es un repo contiene los ejercicios vistos en clases
 2. SQLite
    1. [Ejercicio Uno SQLite Insertar Registros](./Clases/27-09-2024/insertar-y-leer-en-SQLite/) -> 27-09-2024
    2. [Crud SQLite](./Clases/30-09-2024/crud/) -> 30-09-2024
+   3. [Crud SQLite](./Clases/30-09-2024/crud/) -> 02-10-2024
