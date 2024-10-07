@@ -21,3 +21,4 @@ Este es un repo contiene los ejercicios vistos en clases
    2. [Crud SQLite](./Clases/30-09-2024/crud/) -> 30-09-2024
    3. [Crud SQLite](./Clases/30-09-2024/crud/) -> 02-10-2024
    4. [SQLite Relaciones](./Clases/04-10-2024/SQLite%20Relational/) -> 04-10-2024
+   5. [SQLite Relaciones Completado](./Clases/07-10-2024/CrudSqlRelationalCompleto/) -> 07-10-2024
